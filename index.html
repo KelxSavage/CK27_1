@@ -452,6 +452,11 @@ section {
         width: min(90vw, 430px);
     }
 
+    /* Slightly lower name placement on phones only. */
+    .names {
+        transform: translateY(calc(20vh + 7px));
+    }
+
     .envelope-title {
         margin-bottom: 28px;
     }
@@ -726,7 +731,7 @@ function playBackgroundMusic() {
     musicTracks.forEach(track => {
         if (track !== activeMusic) track.pause();
     });
-    activeMusic.volume = 0.16;
+    activeMusic.volume = 0.07;
     activeMusic.play().then(() => {
         updateMusicButton(true);
     }).catch(() => {
